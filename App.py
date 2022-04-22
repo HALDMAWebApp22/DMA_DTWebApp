@@ -50,7 +50,7 @@ elif authentication_status == None:
 elif st.session_state['authentication_status'] == True:
 
     st.header('Thames Water - RIVERSIDE & ISLE OF DOGS DMA Digital Twins')
-    image2 = Image.open('Data\tw.png')
+    image2 = Image.open(r'Data\tw.png')
     add_image2 = st.sidebar.image(image2, width=250)
     st.sidebar.write('Welcome %s' % (name))
 
@@ -59,10 +59,10 @@ elif st.session_state['authentication_status'] == True:
 
     if pages == "POI GEO MAP":
 
-        df1 = pd.read_csv(r"Data\Thames Digital Twin App\DELTA.csv")
-        df2 = pd.read_csv(r"Data\Thames Digital Twin App\HWM Acoustic Loggers.csv")
-        df4 = pd.read_csv(r"Data\Projects\Thames Digital Twin App\Level_Spread_Data.csv")
-        df9 = pd.read_csv(r"Data\Projects\Thames Digital Twin App\HWM Daily.csv")
+        df1 = pd.read_csv(r"Data\DELTA.csv")
+        df2 = pd.read_csv(r"Data\HWM Acoustic Loggers.csv")
+        df4 = pd.read_csv(r"Data\Projects\Level_Spread_Data.csv")
+        df9 = pd.read_csv(r"Data\Projects\HWM Daily.csv")
         
         C1, C2, C3, C4 = st.columns((1,1,1,1))
 

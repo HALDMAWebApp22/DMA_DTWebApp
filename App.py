@@ -50,7 +50,7 @@ elif authentication_status == None:
 elif st.session_state['authentication_status'] == True:
 
     st.header('Thames Water - RIVERSIDE & ISLE OF DOGS DMA Digital Twins')
-    image2 = Image.open(r'Data\tw.png')
+    image2 = Image.open(r'Data/tw.png')
     add_image2 = st.sidebar.image(image2, width=250)
     st.sidebar.write('Welcome %s' % (name))
 
@@ -59,10 +59,10 @@ elif st.session_state['authentication_status'] == True:
 
     if pages == "POI GEO MAP":
 
-        df1 = pd.read_csv(r"Data\DELTA.csv")
-        df2 = pd.read_csv(r"Data\HWM Acoustic Loggers.csv")
-        df4 = pd.read_csv(r"Data\Projects\Level_Spread_Data.csv")
-        df9 = pd.read_csv(r"Data\Projects\HWM Daily.csv")
+        df1 = pd.read_csv(r"Data/DELTA.csv")
+        df2 = pd.read_csv(r"Data/HWM Acoustic Loggers.csv")
+        df4 = pd.read_csv(r"Data/Projects\Level_Spread_Data.csv")
+        df9 = pd.read_csv(r"Data/Projects\HWM Daily.csv")
         
         C1, C2, C3, C4 = st.columns((1,1,1,1))
 
@@ -220,8 +220,8 @@ elif st.session_state['authentication_status'] == True:
     elif pages == "LEAK GEO MAP":
 
         m = leafmap.Map(location=[51.4756, -0.0111], zoom_start=14,tiles='Stamen Toner')
-        pipe1 = gpd.read_file(r"Shapefiles\ZRIVSE Pipes.shp")
-        pipe2 = gpd.read_file(r"Shapefiles\ZFINSB Pipes.shp")
+        pipe1 = gpd.read_file(r"Shapefiles/ZRIVSE Pipes.shp")
+        pipe2 = gpd.read_file(r"Shapefiles/ZFINSB Pipes.shp")
         folium.GeoJson(data=pipe1["geometry"],style_function=lambda x:{'fillColor': '#000080', 'color': '#000080','weight':4}).add_to(folium.FeatureGroup(name='ZRIVSE Pipes',show=True).add_to(m))
         folium.GeoJson(data=pipe2["geometry"],style_function=lambda x:{'fillColor': '#FACC2E', 'color': '#FACC2E','weight':4}).add_to(folium.FeatureGroup(name='ZFINSB Pipes',show=True).add_to(m))
 
@@ -252,19 +252,19 @@ elif st.session_state['authentication_status'] == True:
 
     elif pages == "DM FLOW DATA":
         
-        df6 = pd.read_csv(r"Data\ZRIVSE02.csv")
+        df6 = pd.read_csv(r"Data/ZRIVSE02.csv")
         fig = px.line(df6, x="Date", y=df6.columns)
         fig.update_layout(height=800)
         fig.update_xaxes(rangeslider_thickness = 0.05)
         st.plotly_chart(fig,use_container_width=True)
 
-        df7 = pd.read_csv(r"Data\ZRIVSE03.csv")
+        df7 = pd.read_csv(r"Data/ZRIVSE03.csv")
         fig2 = px.line(df7, x="Date", y=df7.columns)
         fig2.update_layout(height=800)
         fig2.update_xaxes(rangeslider_thickness = 0.05)
         st.plotly_chart(fig2,use_container_width=True)
 
-        df8 = pd.read_csv(r"Data\ZRIVSE04.csv")
+        df8 = pd.read_csv(r"Data/ZRIVSE04.csv")
         fig3 = px.line(df8, x="Date", y=df8.columns)
         fig3.update_layout(height=800)
         fig3.update_xaxes(rangeslider_thickness = 0.05)

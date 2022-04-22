@@ -29,7 +29,7 @@ import streamlit.components.v1 as components
 import time
 from datetime import datetime
 import streamlit as st
-from utils import db
+from utilis import db
 
 st.set_page_config(layout="wide")
 image = Image.open('Data\HAL.png')

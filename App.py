@@ -32,7 +32,7 @@ import streamlit as st
 from utilis import db
 
 st.set_page_config(layout="wide")
-image = Image.open('Data\HAL.png')
+image = Image.open('Data/HAL.png')
 add_image = st.sidebar.image(image, width=250)
 names = ['Glyn Addicott','Hussein Gulamhusein','Nick Jansen','Fakher Raza', 'Malcolm Russell', 'Soruban Sarvananther','Gary Watts']
 usernames = ['Glyn','Hussein','Nick','Fakher', 'Malcolm', 'Soruban', 'Gary']

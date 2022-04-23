@@ -16,3 +16,4 @@ utils==1.0.1
 google_api_python_client==2.45.0
 google_auth_httplib2==0.1.0
 httplib2==0.20.4
+Fiona==1.8.18

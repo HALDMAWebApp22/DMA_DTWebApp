@@ -61,8 +61,8 @@ elif st.session_state['authentication_status'] == True:
 
         df1 = pd.read_csv(r"Data/DELTA.csv")
         df2 = pd.read_csv(r"Data/HWM Acoustic Loggers.csv")
-        df4 = pd.read_csv(r"Data/Projects\Level_Spread_Data.csv")
-        df9 = pd.read_csv(r"Data/Projects\HWM Daily.csv")
+        df4 = pd.read_csv(r"Data/Level_Spread_Data.csv")
+        df9 = pd.read_csv(r"Data/HWM Daily.csv")
         
         C1, C2, C3, C4 = st.columns((1,1,1,1))
 
